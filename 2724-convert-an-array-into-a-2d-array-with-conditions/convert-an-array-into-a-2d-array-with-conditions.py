@@ -1,17 +1,21 @@
 class Solution:
-    def findMatrix(self, nums: List[int]) -> List[List[int]]:
+    def findMatrix(self, nums):
         ans = []
-        count_map = {}
-        for num in nums:
-            count_map[num] = count_map.get(num, 0) + 1
+        s = set()
 
-        while count_map:
-            temp = []
-            for key, count in list(count_map.items()):
-                temp.append(key)
-                count_map[key] -= 1
-                if count_map[key] == 0:
-                    del count_map[key]
-            ans.append(temp)
+        while nums:
+            uniqueRow = []
+
+            i = 0
+            while i < len(nums):
+                if nums[i] not in s:
+                    s.add(nums[i])
+                    uniqueRow.append(nums[i])
+                    nums.pop(i)
+                    i -= 1  # Adjust the index after popping an element
+                i += 1
+
+            ans.append(uniqueRow)
+            s.clear()  # Clear the set for the next row
 
         return ans
