@@ -1,18 +1,11 @@
-class Solution(object):
+class Solution:
     def numberOfBeams(self, bank):
-        prev_row_count = 0
-        total = 0
-
-        for row in bank:
-            cur_row_count = self.calc(row)
-            if cur_row_count == 0:
+        ans, temp = 0, 0
+        for s in bank:
+            n = s.count('1')
+            if n == 0:
                 continue
+            ans += temp * n
+            temp = n
+        return ans
 
-            total += cur_row_count * prev_row_count
-            prev_row_count = cur_row_count
-
-        return total
-
-    def calc(self, s):
-        return sum(int(c) for c in s)
-        
