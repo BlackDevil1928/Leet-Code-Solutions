@@ -1,19 +1,35 @@
 class Solution {
 public:
     vector<vector<int>> findWinners(vector<vector<int>>& matches) {
-        map<int,int>mp;
-
-        for(int i=0;i<matches.size();i++){
-            mp[matches[i][0]]+=0;
-            mp[matches[i][1]]++;
+        unordered_map<int,int>lost_map;
+        for(int i=0;i<matches.size();i++)
+        {
+            int lose=matches[i][1];
+        lost_map[lose]++;
         }
+        vector<int>notLost;
+        vector<int>onceLost;
+        for(int i=0;i<matches.size();i++)
+        {
+           int winner=matches[i][0];
+           int looser=matches[i][1];
+           if(lost_map.find(winner)==lost_map.end()) 
+           {
+               notLost.push_back(winner);
+               lost_map[winner]=2;
 
-        vector<vector<int>>ans(2);
-        for(auto a: mp){
-            if(a.second==0)ans[0].push_back(a.first);
-            if(a.second==1)ans[1].push_back(a.first);
+           }
+           if(lost_map[looser]==1)
+           onceLost.push_back(looser);
+
         }
-        // sort(ans.begin(),ans.end());
-        return ans;
+        sort(notLost.begin(),notLost.end());    
+        sort(onceLost.begin(),onceLost.end());
+
+        return {notLost,onceLost};
+
+
+
+        
     }
 };
