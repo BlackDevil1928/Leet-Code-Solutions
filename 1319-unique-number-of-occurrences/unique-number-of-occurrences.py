@@ -1,3 +1,3 @@
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
-        return len(c:=Counter(arr))==len(set(c.values()))
+        return reduce(eq,Counter(Counter(arr).values()).values(),1)
