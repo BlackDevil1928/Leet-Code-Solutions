@@ -19,4 +19,4 @@ function minFallingPathSum(matrix: number[][]): number {
     }
 
     return Math.min(...prevRow);
-}
+};
