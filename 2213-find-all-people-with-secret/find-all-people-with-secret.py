@@ -1,5 +1,5 @@
-class Solution(object):
-    def findAllPeople(self, n, meetings, firstPerson):
+class Solution:
+    def findAllPeople(self, n: int, meetings: List[List[int]], firstPerson: int) -> List[int]:
         known_set = set([0, firstPerson])
         
         sorted_meetings = []
