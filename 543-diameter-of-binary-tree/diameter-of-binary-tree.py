@@ -1,5 +1,5 @@
-class Solution(object):
-    def diameterOfBinaryTree(self, root):
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         # Define a recursive function to calculate the diameter
         def diameter(node, res):
             # Base case: if the node is None, return 0
