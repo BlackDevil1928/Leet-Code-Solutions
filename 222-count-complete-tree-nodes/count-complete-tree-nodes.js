@@ -27,8 +27,8 @@ var countNodes = function (root) {
 	/**
 	 * right nodes + left nodes + the root
 	 */
-	//return countNodes(root.right) + countNodes(root.left) + 1;
-    return countNodes(root.left) + countNodes(root.right) + 1;
+	return countNodes(root.right) + countNodes(root.left) + 1;
+    //return countNodes(root.left) + countNodes(root.right) + 1;
 };
 
 /**
