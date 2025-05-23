@@ -1,26 +1,20 @@
 class Solution {
 public:
     long long maximumValueSum(vector<int>& nums, int k, vector<vector<int>>& edges) {
-        long long res = 0;
-        int changes = 0;
-        int minDiff = INT_MAX;
-        
-        for (int num : nums) {
-            int xorNum = num ^ k;
-
-            if (num < xorNum) {
-                changes++;
-                res += xorNum;
-            } else {
-                res += num;
-            }
-
-            minDiff = min(minDiff, abs(num - xorNum));
+        long long sum = 0;
+        vector<long long> res;
+        for (int x : nums) {
+            sum += x;
+            int y = x ^ k;
+            res.push_back(y - x);
         }
-
-        if (changes % 2 == 1)
-            return res - minDiff;
-        else
-            return res;
+        sort(res.begin(), res.end());
+        reverse(res.begin(), res.end());
+        
+        for (int i = 0; i < res.size() - 1; i += 2) {
+            if (res[i] + res[i + 1] <= 0) break;
+            sum += res[i] + res[i + 1];
+        }
+        return sum;
     }
 };
