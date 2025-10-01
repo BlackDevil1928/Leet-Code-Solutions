@@ -54,4 +54,5 @@ public:
     bool isMatch(string s, string p) {
         return solveTab(s, p);
     }
+  };
 };
