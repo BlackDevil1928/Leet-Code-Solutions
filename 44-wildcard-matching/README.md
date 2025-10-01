@@ -1,5 +1,3 @@
-<h2><a href="https://leetcode.com/problems/wildcard-matching">Wildcard Matching</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>Given an input string (<code>s</code>) and a pattern (<code>p</code>), implement wildcard pattern matching with support for <code>&#39;?&#39;</code> and <code>&#39;*&#39;</code> where:</p>
-
 <ul>
 	<li><code>&#39;?&#39;</code> Matches any single character.</li>
 	<li><code>&#39;*&#39;</code> Matches any sequence of characters (including the empty sequence).</li>
@@ -21,7 +19,7 @@
 <pre>
 <strong>Input:</strong> s = &quot;aa&quot;, p = &quot;*&quot;
 <strong>Output:</strong> true
-<strong>Explanation:</strong>&nbsp;&#39;*&#39; matches any sequence.
+
 </pre>
 
 <p><strong class="example">Example 3:</strong></p>
@@ -29,7 +27,7 @@
 <pre>
 <strong>Input:</strong> s = &quot;cb&quot;, p = &quot;?a&quot;
 <strong>Output:</strong> false
-<strong>Explanation:</strong>&nbsp;&#39;?&#39; matches &#39;c&#39;, but the second letter is &#39;a&#39;, which does not match &#39;b&#39;.
+
 </pre>
 
 <p>&nbsp;</p>
